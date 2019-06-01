@@ -6,4 +6,6 @@ const passport = require("passport")
 router.post("/signup", userCtrl.signUp)
 router.post("/login", userCtrl.logIn)
 router.get("/posts", passport.authenticate("jwt", { session: false}) , postCtrl.getPosts )
+router.post("/add-post", passport.authenticate("jwt", { session: false}) , postCtrl.addPost )
+router.post("/edit-post", passport.authenticate("jwt", { session: false}) , postCtrl.editPost )
 module.exports = router;
